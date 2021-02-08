@@ -1,0 +1,155 @@
+Create a project in Java 
+Create a class HeroFightWithThreeMonsters.
+Create an option to escape the fight.
+
+
+package  qnuaritestfight;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Qnuaritestfight {
+
+  public static void main (String [] args)
+    
+    {   
+        Scanner sc = new Scanner(System.in);
+        Random generator = new Random();
+        
+        String heroname;
+        int asd = generator.nextInt(5);
+        switch(asd)
+        {
+            case 0: heroname = "Petko"; break;
+            case 1: heroname = "Goshko"; break;
+            case 2: heroname = "Mitko"; break;
+            case 3: heroname = "Nedko"; break;
+            case 4: heroname = "Svetko"; break;
+            default: heroname = "N/A"; 
+        }
+  
+        System.out.print(heroname + " ATTACK ");
+        int heroattk = generator.nextInt(14)+2;
+        System.out.println(heroattk);
+        System.out.print(heroname + " DEFFENCE ");
+        int herodef = generator.nextInt(14)+2;
+        System.out.println(herodef);
+        System.out.print(heroname + " DAMAGE ");
+        int herodmg = generator.nextInt(14)+2;
+        System.out.println(herodmg);
+        System.out.print(heroname + " LIFE ");
+        int herolife = generator.nextInt(14)+2;
+        System.out.println(herolife);
+      
+        for (int i=0;i<3;i++)
+        {
+             String villainname;
+             int ddd = generator.nextInt(5);
+             switch(ddd)
+        {
+            case 0: villainname = "AAAAAAAAAA"; break;
+            case 1: villainname = "BBBBBBBBBB"; break;
+            case 2: villainname = "CCCCCCCCCC"; break;
+            case 3: villainname = "DDDDDDDDDD"; break;
+            case 4: villainname = "EEEEEEEEEE"; break;
+            default: villainname = "N/A"; 
+        }
+            
+        System.out.print(villainname + " ATTACK ");
+        int villainttk = generator.nextInt(7)+2;
+        System.out.println(villainttk);
+        System.out.print(villainname + " DEFFENCE ");
+        int villaindef = generator.nextInt(7)+2;
+        System.out.println(villaindef);
+        System.out.print(villainname + " DAMAGE ");
+        int villaindmg = generator.nextInt(7)+2;
+        System.out.println(villaindmg);
+        System.out.print(villainname + " LIFE ");
+        int villainlife = generator.nextInt(7)+2;
+        System.out.println(villainlife);
+        
+        Boolean run = false;
+        do{
+           Boolean choosefighter = generator.nextBoolean();
+           
+           if(choosefighter)
+           {
+               System.out.println(heroname + " IS ATTACKING");
+               int dice = generator.nextInt(6)+1 + generator.nextInt(6)+1;
+               int realattack = herodmg + dice;
+               System.out.println("To be added to the attack: " +dice);
+               System.out.println("THE FINAL ATTACK: " +realattack);
+               
+               if (villaindef<realattack)
+               {
+                   System.out.println("SUCCESFULL ATTACK");
+                   villainlife = villainlife - herodmg;
+                   System.out.println(villainname+"'s remaining life is: " + villainlife);
+                           
+               }
+               
+               else
+               {
+                   System.out.println("ATTACK WAS BLOCKED");
+               
+               }
+          
+           }
+        
+           else 
+           {
+               System.out.println(villainname + " IS ATTACKING");
+               int dice = generator.nextInt(6)+1 + generator.nextInt(6)+1;
+               int realattack = herodmg + dice;
+               System.out.println("To be added to the attack: " +dice);
+               System.out.println("THE FINAL ATTACK: " +realattack);
+               
+               if (herodef<realattack)
+               {
+                   System.out.println("SUCCESFULL ATTACK");
+                   herolife =herolife - villaindmg;
+                   System.out.println(heroname+"'s remaining life is: " + herolife);
+                           
+               }
+               
+               else
+               {
+                   System.out.println("ATTACK WAS BLOCKED");
+               
+               }
+               
+               System.out.println("Press Enter to Continue the Fight or type in 'run' to run for your life");
+               String dd = sc.nextLine();
+               switch (dd)
+               {
+                   case "run": System.out.println(heroname + " RAN TO SAFE HIS ASS");
+                   herolife= herolife - 4;
+                   System.out.println(heroname+ " RAN FROM THE FIGHT WITH "+herolife +" LIFE POINTS LEFT");
+                   run=true;
+                   break;
+                   
+                   default:
+                   break;
+                   
+               }
+
+           }
+           
+     
+        }while(herolife>0 && villainlife>0 && !run);
+       
+        if(herolife>=0)
+        {
+            System.out.println(heroname + " IS THE WINNER");
+        }
+        
+        if(villainlife>=0)
+        {
+            System.out.println(villainname + " IS THE WINNER");
+        }
+           
+        }
+   
+    }
+
+}
