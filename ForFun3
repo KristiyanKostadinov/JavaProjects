@@ -1,0 +1,34 @@
+package ooptest9;
+
+import java.util.Scanner;
+
+public class OOPTEST9{
+
+
+public static void main (String[] args)
+        
+{
+    Scanner sc = new Scanner (System.in);
+    int num1,num2,k;
+    
+    System.out.print("Input the 1st number: ");
+    num1 = sc.nextInt();
+    System.out.print("Input the 2nd number: ");
+    num2 = sc.nextInt();
+    
+    k = num1%num2;
+    
+    if (k==0)
+    {
+        System.out.println(num1+" is multiple of " + num2);
+           
+    }
+    else 
+    {
+        System.out.println(num1+" is not multiple of " + num2);
+    
+    }
+
+  }
+
+}
