@@ -1,0 +1,23 @@
+package ooptest10;
+
+import java.util.Scanner;
+public class OOPTEST10 {
+
+ public static void main (String[] args)
+         
+ {
+     Scanner sc = new Scanner (System.in);
+     int i,num=0,largest=0;
+     
+     for(i=0;i<10;i++)
+     {
+         System.out.print("Input number: ");
+         num = sc.nextInt();
+         largest = Math.max(largest,num);
+     
+     }
+         System.out.println("The largest number of all is: " + Math.max(largest, num));
+ 
+  }
+
+}
