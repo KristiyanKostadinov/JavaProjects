@@ -1,0 +1,29 @@
+package ooptest8;
+
+import java.util.Scanner;
+public class OOPTEST8 {
+
+
+public static void main (String[] args){
+
+    Scanner sc = new Scanner (System.in);
+    int num1,num2,num3;
+    
+    System.out.print("Input the 1st num: ");
+    num1 = sc.nextInt();
+    System.out.print("Input the 2nd num: ");
+    num2 = sc.nextInt();
+    System.out.print("Input the 3rd num: ");
+    num3 = sc.nextInt();
+    
+    System.out.println("The sum of the three numbers is: " + (num1+num2+num3));
+    System.out.println("The average of the three numbers is: " + (num1+num2+num3)/3);
+    System.out.println("The product of the three numbers is: " + (num1*num2*num3));
+    int largest = Math.max(num1,Math.max(num2,num3));
+    System.out.println("The biggest of the three numbers is: " + largest);
+    int smallest = Math.min(num1,Math.min(num2, num3));
+    System.out.println("The smallest of the three numbers is: " + smallest);
+
+}
+
+}
